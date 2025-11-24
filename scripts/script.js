@@ -1,5 +1,11 @@
 const todoList = document.querySelector('.todoList');
-const todoArray = [];
+const todoArray = [{
+  name: 'Kiss Muti',
+  dueDate: '11-24-2025'
+}, {
+  name: 'do mb with Muti',
+  dueDate: '11-25-2025'
+}];
 
 renderTodoList();
 
@@ -7,10 +13,11 @@ function renderTodoList() {
   let todoArrayHTML = '';
 
   for (let i = 0; i < todoArray.length; i++) {
-    const todo = todoArray[i];
+    const todoObject = todoArray[i];
+    const { name, dueDate } = todoObject;
     const html = `
         <p>
-          ${todo} 
+          ${name} ${dueDate} 
           <button onclick="
             todoArray.splice(${i}, 1);
             renderTodoList();
@@ -19,21 +26,19 @@ function renderTodoList() {
           `;
     todoArrayHTML += html;
   }
-  console.log(todoArrayHTML);
   todoList.innerHTML = todoArrayHTML;
 }
 
 function addTodo() {
   const todoInput = document.querySelector('.todo-input');
-  const inputValue = todoInput.value;
+  const dueDateInput = document.querySelector('.due-date-input');
+  const dueDate = dueDateInput.value;
+  const name = todoInput.value;
 
-  if (inputValue === '**clearAll**') {
-    todoArray = [];
-    console.log(todoArray);
-  } else {
-    todoArray.push(inputValue);
-    console.log(todoArray);
-  }
+  todoArray.push({
+    name,
+    dueDate
+  });
 
   todoInput.value = '';
 
