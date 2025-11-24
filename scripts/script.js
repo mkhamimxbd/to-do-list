@@ -16,14 +16,13 @@ function renderTodoList() {
     const todoObject = todoArray[i];
     const { name, dueDate } = todoObject;
     const html = `
-        <p>
-          ${name} ${dueDate} 
-          <button onclick="
-            todoArray.splice(${i}, 1);
-            renderTodoList();
-          ">Delete</button>
-        </p>
-          `;
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button onclick="
+        todoArray.splice(${i}, 1);
+        renderTodoList();
+      ">Delete</button>
+    `;
     todoArrayHTML += html;
   }
   todoList.innerHTML = todoArrayHTML;

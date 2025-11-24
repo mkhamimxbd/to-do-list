@@ -9,10 +9,12 @@
 </head>
 
 <body>
-  <input type="text" class="todo-input" onkeydown="addTodoOnEnter()">
-  <input type="date" class="due-date-input">
-  <button class="add-btn" onclick="addTodo()">Add</button>
-  <div class="todoList"></div>
+  <div class="todo-input-grid">
+    <input type="text" class="todo-input" onkeydown="addTodoOnEnter()">
+    <input type="date" class="due-date-input">
+    <button class="add-btn" onclick="addTodo()">Add</button>
+    <div class="todoList todo-grid"></div>
+  </div>
 
   <script src="scripts/script.js"></script>
 </body>
