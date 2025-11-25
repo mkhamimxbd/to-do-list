@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  background-color: #c5d9ff65;
+  background-color: rgb(36, 36, 36);
+  color: white;
 }
 
 .page-heading {
