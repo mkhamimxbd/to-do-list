@@ -1,11 +1,5 @@
 const todoList = document.querySelector('.todoList');
-const todoArray = [{
-  name: 'Kiss Muti',
-  dueDate: '11-24-2025'
-}, {
-  name: 'do mb with Muti',
-  dueDate: '11-25-2025'
-}];
+const todoArray = [];
 
 renderTodoList();
 
