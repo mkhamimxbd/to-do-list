@@ -18,9 +18,10 @@ function renderTodoList() {
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="
-        todoArray.splice(${i}, 1);
-        renderTodoList();
+      <button class="delete-btn"
+        onclick="
+          todoArray.splice(${i}, 1);
+          renderTodoList();
       ">Delete</button>
     `;
     todoArrayHTML += html;
