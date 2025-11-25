@@ -31,6 +31,8 @@ body {
 .todo-input,
 .due-date-input {
   padding: 6px;
+  border: none;
+  outline: none;
 }
 
 .add-btn {
