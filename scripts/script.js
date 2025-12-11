@@ -6,20 +6,20 @@ renderTodoList();
 function renderTodoList() {
   let todoArrayHTML = '';
 
-  for (let i = 0; i < todoArray.length; i++) {
-    const todoObject = todoArray[i];
+  todoArray.forEach(function (todoObject, index) {
     const { name, dueDate } = todoObject;
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
       <button class="delete-btn"
         onclick="
-          todoArray.splice(${i}, 1);
+          todoArray.splice(${index}, 1);
           renderTodoList();
       ">Delete</button>
     `;
     todoArrayHTML += html;
-  }
+  });
+
   todoList.innerHTML = todoArrayHTML;
 }
 
