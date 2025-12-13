@@ -11,16 +11,23 @@ function renderTodoList() {
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button class="delete-btn"
+      <button class="delete-btn js-delete-btn"
         onclick="
-          todoArray.splice(${index}, 1);
-          renderTodoList();
+          
       ">Delete</button>
     `;
     todoArrayHTML += html;
   });
 
   todoList.innerHTML = todoArrayHTML;
+
+  document.querySelectorAll('.js-delete-btn')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoArray.splice(index, 1);
+        renderTodoList();
+      });
+    })
 }
 
 function addTodo() {
