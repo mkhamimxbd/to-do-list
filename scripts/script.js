@@ -44,3 +44,11 @@ function addTodoOnEnter() {
     addTodo();
   }
 }
+
+document.querySelector('.js-todo-input').addEventListener('keydown', () => {
+  addTodoOnEnter();
+});
+
+document.querySelector('.js-add-btn').addEventListener('click', () => {
+  addTodo();
+});
